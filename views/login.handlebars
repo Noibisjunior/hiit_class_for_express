@@ -1,0 +1,19 @@
+<div class="container">
+        <h2>Please Login</h2>
+        <p style="color:red">{{msg}}</p>
+        <form action="/login" method="post" name="login">
+        <div class="form-control">
+            <input type="email" name ='email'>
+            <label>Email</label>
+        </div>
+
+        <div class="form-control">
+            <input type="password" name="password">
+            <label>password</label>
+        </div>
+        <!-- <div class="form-control"> -->
+        <button  type ='submit' class="btn">LOGIN</button>
+        <!-- </div> -->
+        <p class="text">Don't have an account,please <a href="/views/register.handlebars">register!</a></p>
+        </form>
+    </div>

@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
 
+//module for hashing password
+const Bcrypt = require('bcryptjs')
+
+//creating a column inside a table
 const authSchema = mongoose.Schema({
     email : {
         type : String
@@ -16,8 +19,11 @@ const authSchema = mongoose.Schema({
 
 
 authSchema.pre('save', async function () {
-    const salt = await bcrypt.genSalt(10)
-    this.password = await bcrypt.hash(this.password, salt)
+    const salt = await Bcrypt.genSalt(10)
+    this.password = await Bcrypt.hash(this.password,salt)
 })
-
+authSchema.methods.comparePasswords = async function(candidatePassword){
+    const isMatch = Bcrypt.compare(candidatePassword,this.password)
+    return isMatch 
+}
 module.exports = mongoose.model('Auth', authSchema)

@@ -1,0 +1,24 @@
+<div class="container">
+        <h2>REGISTER</h2>
+        <p style="color:red">{{msg}}</p>
+        <form action="/register" method="post" name="register">
+        <div class="form-control">
+            <input type="email" name ="email">
+            <label>Email</label>
+        </div>
+
+<div class="form-control">
+            <input type="text" name="username">
+            <label>Username</label>
+        </div>
+
+        <div class="form-control">
+            <input type="password" name="password">
+            <label>password</label>
+        </div>
+        <!-- <div class="form-control"> -->
+        <button  type ='submit' class="btn">REGISTER</button>
+        <!-- </div> -->
+        {{!-- <p class="text">Don't have an account,please <a href="#">register!</a></p> --}}
+        </form>
+    </div>
